@@ -6,4 +6,7 @@ import java.util.List;
 
 public interface TestService {
     public List<Product> getAllDataList();
+
+    public Product getOneData(String idx);
+
 }

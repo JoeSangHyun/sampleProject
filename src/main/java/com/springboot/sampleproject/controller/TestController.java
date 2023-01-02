@@ -3,6 +3,7 @@ package com.springboot.sampleproject.controller;
 import com.springboot.sampleproject.service.TestService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import com.springboot.sampleproject.model.dto.Product;
 
@@ -22,5 +23,11 @@ public class TestController {
     @GetMapping("/test")
     public List<Product> test() {
         return testService.getAllDataList();
+    }
+
+    @GetMapping("/testOne")
+    public Product getOneData(String idx) {
+
+        return testService.getOneData(idx);
     }
 }

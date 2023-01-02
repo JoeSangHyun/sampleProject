@@ -10,4 +10,6 @@ import java.util.List;
 @Mapper
 public interface TestMapper {
     List<Product> getAllDataList();
+
+    Product getOneData(String idx);
 }

@@ -6,6 +6,10 @@
 <mapper namespace="com.springboot.sampleproject.model.dao.TestMapper">
 
     <select id="getAllDataList" resultType="com.springboot.sampleproject.model.dto.Product">
-        SELECT * FROM portfolio;
+        SELECT * FROM portfolio
+    </select>
+
+    <select id="getOneData" resultType="com.springboot.sampleproject.model.dto.Product">
+        SELECT * FROM portfolio where idx = #{idx}
     </select>
 </mapper>
