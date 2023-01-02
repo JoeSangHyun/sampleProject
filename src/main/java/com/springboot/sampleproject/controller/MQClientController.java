@@ -1,22 +1,25 @@
 package com.springboot.sampleproject.controller;
 
 import com.springboot.sampleproject.model.dto.Worker;
-import com.springboot.sampleproject.service.RabbitClientService;
 import com.springboot.sampleproject.service.dRoolsEngineService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 @RequiredArgsConstructor
 @RestController
 public class MQClientController {
 
-    private final RabbitClientService rabbitClientService;
+    private static final String EXCHANGE_NAME = "Sample";
+    private static final String ROUTING_KEY = "sample.routingkey.#";
+    @Autowired
+    RabbitTemplate rabbitTemplate;
     private final dRoolsEngineService droolsEngineService;
 
-    @GetMapping("mq")
-    public String setMQDataController(
+
+    @PostMapping(value = "mqLiskLevel")
+    public String sendMQDataController(
             @RequestParam String id,
             @RequestParam double x,
             @RequestParam double y,
@@ -30,6 +33,10 @@ public class MQClientController {
         worker.setY(y);
         worker.setZ(z);
         worker.setRiskLevel(droolsEngineService.drools(x,y,poseName));
-        return rabbitClientService.RabbitMQService(worker);
+
+        rabbitTemplate.convertAndSend(EXCHANGE_NAME,ROUTING_KEY,worker.toString());
+
+        return "message sending!";
+
     }
 }
