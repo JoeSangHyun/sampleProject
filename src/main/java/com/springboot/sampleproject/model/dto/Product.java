@@ -2,6 +2,7 @@ package com.springboot.sampleproject.model.dto;
 
 import lombok.*;
 
+// Mybatis 테스트용 dto
 @Getter
 @Setter
 @NoArgsConstructor

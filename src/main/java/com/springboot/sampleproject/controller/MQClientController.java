@@ -17,7 +17,7 @@ public class MQClientController {
     RabbitTemplate rabbitTemplate;
     private final dRoolsEngineService droolsEngineService;
 
-
+    // MQ 데이터 삽입
     @PostMapping(value = "mqLiskLevel")
     public String sendMQDataController(
             @RequestParam String id,
@@ -25,7 +25,7 @@ public class MQClientController {
             @RequestParam double y,
             @RequestParam double z,
             @RequestParam int poseName
-                                      ) {
+    ) {
 
         Worker worker = new Worker();
         worker.setId(id);

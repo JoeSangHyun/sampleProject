@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+// Mybatis 테스트용 Mapper
 @Repository
 @Mapper
 public interface TestMapper {

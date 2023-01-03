@@ -10,6 +10,7 @@ import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
 import org.springframework.context.annotation.Bean;
 
+// MQ config
 public class MQConfig {
     private static final String EXCHANGE_NAME = "smaple";
     private static final String QUEUE_NAME = "sample";

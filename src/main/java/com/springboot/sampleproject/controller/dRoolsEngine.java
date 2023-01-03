@@ -19,7 +19,7 @@ public class dRoolsEngine {
 
     private final dRoolsEngineService droolsEngineService;
 
-
+    // dRoolsEngine 비동기 테스트 용
     @GetMapping("drools")
     public String drools() {
         log.info("Test Async");

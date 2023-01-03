@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+// mybatis 테스트용
 @Slf4j
 @Service
 @RequiredArgsConstructor

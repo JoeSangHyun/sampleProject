@@ -12,6 +12,7 @@ import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
+// dRoolsEngine 비동기 처리 용
 @Slf4j
 @Service
 @RequiredArgsConstructor
@@ -21,11 +22,8 @@ public class dRoolsEngineService {
         try {
             Thread.sleep(500);
             log.info("[AsyncMethod]" + "-" + i + " " +  drools(10241.093046189342,734.6519734283407,2));
-        } catch (TaskRejectedException e) {
+        } catch (TaskRejectedException | InterruptedException e) {
             e.printStackTrace();
-        }
-        catch (InterruptedException ie) {
-            ie.printStackTrace();
         }
     }
     public String drools(double posX, double posY, int poseName) {

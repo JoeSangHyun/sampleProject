@@ -2,6 +2,7 @@ package com.springboot.sampleproject.model.dto;
 
 import lombok.*;
 
+// 작업자 정보 dto
 @Getter
 @Setter
 @NoArgsConstructor
