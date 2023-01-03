@@ -13,12 +13,11 @@ public class MQClientController {
 
     private static final String EXCHANGE_NAME = "Sample";
     private static final String ROUTING_KEY = "sample.routingkey.#";
-    @Autowired
-    RabbitTemplate rabbitTemplate;
+    private final RabbitTemplate rabbitTemplate;
     private final dRoolsEngineService droolsEngineService;
 
     // MQ 데이터 삽입
-    @PostMapping(value = "mqLiskLevel")
+    @PostMapping(value = "mqRiskLevel")
     public String sendMQDataController(
             @RequestParam String id,
             @RequestParam double x,

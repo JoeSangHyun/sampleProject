@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Bean;
 
 // MQ config
 public class MQConfig {
-    private static final String EXCHANGE_NAME = "smaple";
+    private static final String EXCHANGE_NAME = "Sample";
     private static final String QUEUE_NAME = "sample";
     private static final String ROUTING_KEY = "sample.routingkey.#";
 

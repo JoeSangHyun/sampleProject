@@ -2,8 +2,8 @@ package com.springboot.sampleproject.controller;
 
 import com.springboot.sampleproject.service.dRoolsEngineService;
 import lombok.RequiredArgsConstructor;
+
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -22,7 +22,7 @@ public class dRoolsEngine {
     // dRoolsEngine 비동기 테스트 용
     @GetMapping("drools")
     public String drools() {
-        log.info("Test Async");
+        System.out.println("Test Async");
 
         for(int i=0;i<50;i++) {
             droolsEngineService.asyncMethod(i);

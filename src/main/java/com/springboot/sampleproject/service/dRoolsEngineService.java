@@ -46,7 +46,7 @@ public class dRoolsEngineService {
         List<DroolsEngineInput> out = DroolsApp.ExecuteEngine(input, ruleFilePath);
 
         for (int i = 0; i < out.size(); i++) {
-            System.out.println("Inference out: " + i +
+            log.info("Inference out: " + i +
                     " / x: " + out.get(i).positionX +
                     " / y: " + out.get(i).positionY +
                     " / LN: " + out.get(i).locationName +
