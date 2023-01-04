@@ -4,9 +4,9 @@ import com.springboot.sampleproject.model.dto.Worker;
 import com.springboot.sampleproject.service.dRoolsEngineService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+// 위험도 분석 데이터 MQ 삽입
 @RequiredArgsConstructor
 @RestController
 public class MQClientController {

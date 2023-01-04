@@ -20,13 +20,13 @@ public class Worker {
     public String toString() {
        return "{" +
                 "id:" +  id + "," +
-                "currentPosition: {"+
-                "x:" + x + "," +
-                "y:" + y + "," +
-                "z:" + z + "," +
-                "poseName:" + poseName + "," +
-                "riskLevel:" +  riskLevel +
-                "}" +
+                "currentPosition:" + " {"+
+                    "x:" + x + "," +
+                    "y:" + y + "," +
+                    "z:" + z + "," +
+                    "poseName:" + poseName + "," +
+                    "riskLevel:" +  riskLevel +
+                    "}" +
             "}";
     }
 }

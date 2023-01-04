@@ -9,6 +9,7 @@ import com.springboot.sampleproject.model.dto.Product;
 
 import java.util.List;
 
+// Mybatis 사용 컨트롤러
 @RequiredArgsConstructor
 @RestController
 public class TestController {

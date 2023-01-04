@@ -7,22 +7,18 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+// dRoolsEngine -> MQ 리스너에서 받는걸로 구성
 @Slf4j
 @RestController
 @RequiredArgsConstructor
 public class dRoolsEngine {
-
-    //    public Double positionX;
-    //    public Double positionY;
-    //    public int poseName;
-    //    public List<DroolsEngineInput> droolsEngineInputs = new ArrayList<>();
 
     private final dRoolsEngineService droolsEngineService;
 
     // dRoolsEngine 비동기 테스트 용
     @GetMapping("drools")
     public String drools() {
-        System.out.println("Test Async");
+        log.info("Test Async");
 
         for(int i=0;i<50;i++) {
             droolsEngineService.asyncMethod(i);
