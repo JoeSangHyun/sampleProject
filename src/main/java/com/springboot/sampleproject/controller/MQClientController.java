@@ -26,14 +26,14 @@ public class MQClientController {
             @RequestParam int poseName
     ) {
 
-        Worker worker = new Worker();
-        worker.setId(id);
-        worker.setX(x);
-        worker.setY(y);
-        worker.setZ(z);
-        worker.setRiskLevel(droolsEngineService.drools(x,y,poseName));
-
-        rabbitTemplate.convertAndSend(EXCHANGE_NAME,ROUTING_KEY,worker.toString());
+//        Worker worker = new Worker();
+//        worker.setId(id);
+//        worker.setX(x);
+//        worker.setY(y);
+//        worker.setZ(z);
+//        worker.setRiskLevel(droolsEngineService.drools(x,y,poseName));
+//
+//        rabbitTemplate.convertAndSend(EXCHANGE_NAME,ROUTING_KEY,worker.toString());
 
         return "message sending!";
 

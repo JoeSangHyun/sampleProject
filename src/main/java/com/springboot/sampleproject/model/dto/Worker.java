@@ -13,7 +13,7 @@ public class Worker {
     private double y;
     private double z;
 
-    private int poseName;
+    private int poseName = 1;
     private String riskLevel;
 
     @Override
