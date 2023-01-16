@@ -20,7 +20,7 @@ public class dRoolsEngine {
     public String drools() {
         log.info("Test Async");
 
-        for(int i=0;i<50;i++) {
+        for(int i=0;i<100000;i++) {
             droolsEngineService.asyncMethod(i);
         }
         log.info("Test Async end");

@@ -12,4 +12,9 @@
     <select id="getOneData" resultType="com.springboot.sampleproject.model.dto.Product">
         SELECT * FROM portfolio where idx = #{idx}
     </select>
+    <select id="selectLargeData" parameterType="map" resultType="map">
+       <![CDATA[
+        SELECT * FROM portfolio
+        ]]>
+    </select>
 </mapper>
