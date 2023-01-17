@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Map;
 
+// 대용량 처리 ResultHandler #1
 public class LargeDataRowHandler implements ResultHandler<Map<String,Object>> {
     private PrintWriter writer;
     private JsonGenerator jsonGenerator;

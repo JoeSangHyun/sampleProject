@@ -1,18 +1,15 @@
 package com.springboot.sampleproject.controller;
 
 import com.springboot.sampleproject.config.LargeDataRowHandler;
-import com.springboot.sampleproject.service.TestService;
+import com.springboot.sampleproject.service.impl.TestServiceImpl;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import com.springboot.sampleproject.model.dto.Product;
-import org.springframework.web.servlet.function.ServerRequest;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -21,8 +18,7 @@ import java.util.Map;
 @RestController
 public class TestController {
 
-    private final TestService testService;
-
+    private final TestServiceImpl testService;
 
     @GetMapping("/hello")
     public String hello() {
@@ -39,12 +35,9 @@ public class TestController {
         return testService.getOneData(idx);
     }
 
-
     @GetMapping("/select")
-    public void getSelect(@RequestParam Map map, HttpServletRequest request, HttpServletResponse response){
+    public void getSelect(@RequestParam Map<String,Object> map, HttpServletRequest request, HttpServletResponse response){
         try {
-//            Map map = new HashMap<>();
-//            map.put("idx",10);
 
             response.setHeader("Accept","*/*");
 //            response.setContentType("application/json;charset=UTF-8");

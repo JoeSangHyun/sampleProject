@@ -10,6 +10,8 @@ public interface BookService {
 
     public List<BookDto> getAllDataList();
     public void selectData(Map<String,Object> param, LargeDataRowHandler largeDataRowHandler);
-    public void saveBook(int i);
-    public void select(@SuppressWarnings("rawtypes") Map param, LargeDataRowHandler largeDataRowHandler);
+    public void saveBook(Map<String,Object> param);
+    public void select(@SuppressWarnings("rawtypes") Map<String,Object> param, LargeDataRowHandler largeDataRowHandler);
+
+    public Map<String,Object> selectLargeDataset(Map<String,Object> inParams,String datasetName);
 }

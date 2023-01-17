@@ -18,18 +18,26 @@
     </insert>
 
     <select id="getAllDataList" resultType="com.springboot.sampleproject.model.dto.BookDto" fetchSize="1000">
-        SELECT * FROM book
+        <![CDATA[
+        SELECT * FROM book where idx >= 1000000 and idx <= 2000000
+        ]]>
     </select>
 
     <select id="selectLargeData" parameterType="map" resultType="map" fetchSize="1000">
        <![CDATA[
-        SELECT * FROM book
+        SELECT * FROM book where idx >= 1000000 and idx <= 2000000
         ]]>
     </select>
 
     <select id="selectData" parameterType="map" resultType="com.springboot.sampleproject.model.dto.BookDto" fetchSize="1000">
        <![CDATA[
-        SELECT * FROM book
+        SELECT * FROM book where idx >= 1000000 and idx <= 2000000
+        ]]>
+    </select>
+
+    <select id="selectWithRowHandler" parameterType="map" resultType="map" fetchSize="1000">
+       <![CDATA[
+        SELECT * FROM book where idx >= #{min} and idx <= #{max}
         ]]>
     </select>
 </mapper>
