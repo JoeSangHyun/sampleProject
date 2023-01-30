@@ -7,16 +7,17 @@ import org.jasypt.encryption.pbe.config.SimpleStringPBEConfig;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 
 @Configuration
 @EnableEncryptableProperties
-//@Profile({"dev","real"}) application.properties에 dev 항목으로 넣었을 경우
+//@Profile({"local","prod"}) // application.properties에 dev 항목으로 넣었을 경우
 public class JasyptConfig {
     private static final String ALGORITHM =  "PBEWithMD5AndDES";
-    @Value("${ENC_KEY}")
+    @Value("${jasypt.encryptor.password}")
     private String KEY;
 
-    @Bean("jasyptStringEncryptor")
+    @Bean(name="jasyptStringEncryptor")
     public StringEncryptor stringEncryptor() {
 
         PooledPBEStringEncryptor encryptor = new PooledPBEStringEncryptor();

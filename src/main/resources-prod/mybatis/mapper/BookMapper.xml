@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.springboot.sampleproject.model.dao.BookMapper">
+
+    <insert id="saveBook" parameterType="map">
+        insert into book values (#{idx},#{name},#{desc})
+    </insert>
+
+<!--    List로 insert 되는 수량이 정해져 있다. 예외 처리 해주거나 Limit를 늘려야 한다. -->
+    <insert id="saveBookList" parameterType="java.util.List">
+        insert into book values
+        <foreach collection="list" item="param" separator="," >
+            (#{param.id,jdbcType=INTEGER}, #{param.name,jdbcType=VARCHAR}, #{param.desc,jdbcType=VARCHAR})
+        </foreach>
+    </insert>
+
+    <select id="getAllDataList" resultType="com.springboot.sampleproject.model.dto.BookDto" fetchSize="1000">
+        <![CDATA[
+        SELECT * FROM book where idx >= 1000000 and idx <= 2000000
+        ]]>
+    </select>
+
+    <select id="selectLargeData" parameterType="map" resultType="map" fetchSize="1000">
+       <![CDATA[
+        SELECT * FROM book where idx >= 1000000 and idx <= 2000000
+        ]]>
+    </select>
+
+    <select id="selectData" parameterType="map" resultType="com.springboot.sampleproject.model.dto.BookDto" fetchSize="1000">
+       <![CDATA[
+        SELECT * FROM book where idx >= 1000000 and idx <= 2000000
+        ]]>
+    </select>
+
+    <select id="selectWithRowHandler" parameterType="map" resultType="map" fetchSize="1000">
+       <![CDATA[
+        SELECT * FROM book where idx >= #{min} and idx <= #{max}
+        ]]>
+    </select>
+</mapper>

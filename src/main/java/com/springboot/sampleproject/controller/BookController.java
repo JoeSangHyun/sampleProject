@@ -63,8 +63,8 @@ public class BookController {
     public void getSelectData(@RequestParam Map<String,Object> map, HttpServletRequest request, HttpServletResponse response){
         try {
 
-            response.setHeader("Accept","*/*");
-            response.setContentType("application/json;charset=UTF-8");
+//            response.setHeader("Accept","*/*");
+//            response.setContentType("application/json;charset=UTF-8");
 //            response.setContentType("text/plain;charset=UTF-8");
 
             LargeDataRowHandler largeDataRowHandler =new LargeDataRowHandler(response.getWriter());
@@ -78,11 +78,11 @@ public class BookController {
     @GetMapping("/selectLargeData")
     public void getSelectLargeData(HttpServletRequest request, HttpServletResponse response,@RequestParam Map<String,Object> inParams){
         LargeDataUtil largeDataUtil = new LargeDataUtil(inParams,response);
-        response.setHeader("Accept","*/*");
-        response.setContentType("application/json;charset=UTF-8");
+//        response.setHeader("Accept","*/*");
+//        response.setContentType("application/json;charset=UTF-8");
 
         bookService.selectLargeDataset(inParams,"ds_master");
 
-        largeDataUtil.writeResponseToJson(response);
+        largeDataUtil.writeResponseToJson();
     }
 }

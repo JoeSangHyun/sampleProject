@@ -16,7 +16,8 @@ public class LargeDataUtil {
     private ServletOutputStream sos;
 
     public LargeDataUtil(Map<String,Object> inParams, HttpServletResponse response) {
-
+        response.setHeader("Accept","*/*");
+        response.setContentType("application/json;charset=UTF-8");
         try {
             this.sos = response.getOutputStream();
         } catch (IOException e) {
@@ -29,9 +30,7 @@ public class LargeDataUtil {
     /**
      * 파일-> Response Output 처리.
      */
-    public void writeResponseToJson(HttpServletResponse response) {
-        response.setHeader("Accept","*/*");
-        response.setContentType("application/json;charset=UTF-8");
+    public void writeResponseToJson() {
 
         try {
             this.sos.flush();
