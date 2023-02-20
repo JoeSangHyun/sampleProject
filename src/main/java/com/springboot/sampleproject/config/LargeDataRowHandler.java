@@ -12,9 +12,9 @@ import java.util.Map;
 
 // 대용량 처리 ResultHandler #1
 public class LargeDataRowHandler implements ResultHandler<Map<String,Object>> {
-    private PrintWriter writer;
-    private JsonGenerator jsonGenerator;
-    private ObjectMapper mapper;
+    private final PrintWriter writer;
+    private final JsonGenerator jsonGenerator;
+    private final ObjectMapper mapper;
 
     public LargeDataRowHandler(PrintWriter writer){
         try {

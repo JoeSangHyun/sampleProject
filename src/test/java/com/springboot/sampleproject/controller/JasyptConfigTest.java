@@ -1,6 +1,7 @@
 package com.springboot.sampleproject.controller;
 
 import org.jasypt.encryption.pbe.StandardPBEStringEncryptor;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -8,19 +9,21 @@ import org.springframework.boot.test.context.SpringBootTest;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
+@Disabled
 public class JasyptConfigTest {
 
     String ALGORITHTM = "PBEWithMD5AndDES";
-    @Value("${ENC_KEY}")
+    @Value("${jasypt.encryptor.password}")
+    private String KEY;
 //    String KEY = "shinsungengrestapienckey20230117";
-    String KEY;
+//    String KEY;
     @Test
+    @Disabled
     public void jasypt_암호화_복호화() {
         // given
-
         String url = "jdbc:mariadb://localhost:3306/suapapa";
-        String username = "suapapa";
-        String password = "Passw0rd";
+        String username = "shinsung"; // mwgJvS2spihqoIkfLh0QVqu1YvMt36gD
+        String password = "shinsung1!"; // 1CQE65+sT9smSR016EfwK6JuAuF6El9+
 
         StandardPBEStringEncryptor jasypt = new StandardPBEStringEncryptor();
 

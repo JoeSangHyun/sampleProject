@@ -9,6 +9,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
+/**
+ * 프로퍼티 암호화
+ * 암호화 키 값은 application.properties
+ */
 @Configuration
 @EnableEncryptableProperties
 //@Profile({"local","prod"}) // application.properties에 dev 항목으로 넣었을 경우

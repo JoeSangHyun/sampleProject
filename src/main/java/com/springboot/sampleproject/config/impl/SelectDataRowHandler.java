@@ -12,6 +12,11 @@ import java.io.IOException;
 import java.util.Map;
 
 // 대용량 처리용 #2
+
+/**
+ * 대용량 Select 처리
+ * jsonStart 변수에 json 형식 넣을 수 있음
+ */
 public class SelectDataRowHandler implements SelectDataHandler {
     private static final Logger log = LoggerFactory.getLogger(SelectDataRowHandler.class);
     private ServletOutputStream sos;
